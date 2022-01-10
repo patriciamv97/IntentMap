@@ -1,8 +1,11 @@
 package com.dam2a.intent
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.provider.AlarmClock.EXTRA_MESSAGE
 import android.util.Log
+import android.view.View
 import android.widget.Button
 import android.widget.EditText
 import android.widget.Toast
@@ -21,6 +24,7 @@ lateinit var email: EditText
 lateinit var contraseña: EditText
 lateinit var iniciarSesion: Button
 lateinit var registro: Button
+
 
 class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -45,6 +49,16 @@ class MainActivity : AppCompatActivity() {
             signIn(email.text.toString(), contraseña.text.toString())
         }
 
+    }
+    fun sendMessage(view: View) {
+        /*val editText = findViewById<EditText>(R.id.editTextTextPersonName)
+        val message = editText.text.toString()
+
+         */
+        val intent = Intent(this, DisplayGoogleActivity::class.java).apply {
+
+        }
+        startActivity(intent)
     }
 
 
