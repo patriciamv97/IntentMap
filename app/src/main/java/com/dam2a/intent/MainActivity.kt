@@ -50,11 +50,8 @@ class MainActivity : AppCompatActivity() {
         }
 
     }
-    fun sendMessage(view: View) {
-        /*val editText = findViewById<EditText>(R.id.editTextTextPersonName)
-        val message = editText.text.toString()
+    fun sendMessage() {
 
-         */
         val intent = Intent(this, DisplayGoogleActivity::class.java).apply {
 
         }
@@ -81,6 +78,7 @@ class MainActivity : AppCompatActivity() {
                     val user = auth.currentUser
                     //Se llama al método que actualizará el layout cuando se haya registrado y se le pasa el usuario
                     updateUI(user)
+                    sendMessage()
                 } else {
                     //  Si el registro falla, muestra un mensaje al usuario
                     Toast.makeText(baseContext, "Authentication failed.", Toast.LENGTH_SHORT).show()
